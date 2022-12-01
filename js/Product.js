@@ -82,10 +82,7 @@ class Product {
 class TrueProduct extends Product {
   /**
    *
-   * @param {string} name
-   * @param {number} price
-   * @param {string} currently
-   * @param {number} amount
+   *
    * @param {number} weight
    */
   constructor(name, price, currently, amount, weight) {
@@ -109,10 +106,7 @@ class TrueProduct extends Product {
 class VirtualProduct extends Product {
   /**
    *
-   * @param {string} name
-   * @param {number} price
-   * @param {string} currently
-   * @param {number} amount
+   *
    * @param {number} amountMemory
    */
   constructor(name, price, currently, amount, amountMemory) {
