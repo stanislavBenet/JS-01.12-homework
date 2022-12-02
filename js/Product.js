@@ -81,8 +81,6 @@ class Product {
 
 class TrueProduct extends Product {
   /**
-   *
-   *
    * @param {number} weight
    */
   constructor(name, price, currently, amount, weight) {
@@ -100,6 +98,9 @@ class TrueProduct extends Product {
       throw new RangeError("The weight must be more than zero");
     }
     this._weight = weight;
+  }
+  getInfoProduct() {
+    return `Product name: ${this._name}, price:${this._price}${this.currently}, remaining stock: ${this._amount}, weight: ${this._weight}`;
   }
 }
 
@@ -125,6 +126,9 @@ class VirtualProduct extends Product {
     }
     this._amountMemory = amountMemory;
   }
+  getInfoProduct() {
+    return `Product name: ${this._name}, price:${this._price}${this.currently}, remaining stock: ${this._amount}, amount of memory: ${this._amountMemory}`;
+  }
 }
 
 try {
@@ -132,9 +136,9 @@ try {
   console.log(throusers.getInfoProduct());
   console.log(throusers.buyProduct(2));
   const trueThrousers = new TrueProduct("Throusers", 250, "$", 100, 200);
-  console.log(trueThrousers);
+  console.log(trueThrousers.getInfoProduct());
   const virtualThrousers = new VirtualProduct("Throusers", 250, "$", 100, 1024);
-  console.log(virtualThrousers);
+  console.log(virtualThrousers.getInfoProduct());
 } catch (error) {
   console.log(error);
 }
